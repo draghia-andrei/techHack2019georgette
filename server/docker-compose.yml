@@ -1,0 +1,40 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:3.6
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=samplepass
+    ports:
+      - "27017:27017"
+    volumes:
+      #- "./mongo-entrypoint/:/docker-entrypoint-initdb.d/"
+      - mongodata:/data/db
+    command: mongod
+
+  # web:
+  #   build: .
+  #   ports:
+  #    - "8080:8080"
+  #   environment:
+  #    - MONGODB_URI=mongodb://user:pass@mongo:27017/test 
+  #   links:
+  #    - mongo 
+  #   depends_on: 
+  #    - mongo 
+  #   volumes:
+  #    - .:/starter
+
+  mongoclient:
+    image: mongoclient/mongoclient
+    container_name: mongoclient
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - mongo
+
+volumes:
+  mongodata: 
+
+     
