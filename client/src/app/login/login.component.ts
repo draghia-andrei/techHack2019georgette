@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -6,15 +7,21 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+
+  public emailValue = '';
+  public passwordValue = '';
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit() {
-  }
+  // submitLogin() {
+  //   this.authService.login(this.emailValue, this.passwordValue);
+  // }
 
-  submitLogin() {
-    console.log('in login component');
-    this.authService.login('email', 'pass');
+  public onSubmit(loginForm: NgForm) {
+    // console.log(loginForm.value);  // { first: '', last: '' }
+    // console.log(loginForm.valid);  // false
+
+      this.authService.login(loginForm.value);
   }
 }

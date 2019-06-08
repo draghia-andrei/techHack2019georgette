@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -35,13 +36,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
-    AppRoutingModule,
-    AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireMessagingModule,
     AngularFireModule.initializeApp(environment.firebase),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [AuthGuard, ApiService, MessagingService, AsyncPipe],
   bootstrap: [AppComponent]
