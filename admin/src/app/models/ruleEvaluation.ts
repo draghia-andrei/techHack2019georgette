@@ -1,9 +1,6 @@
-import { Rule } from './rules';
-
-export class ruleEvaluation {
+export class RuleEvaluation {
   constructor(
-    public id: number,
-    public score: number,
-    public evaluatedTime: string
+    public label: string,
+    public evaluatedSuccessfully: boolean
   ) { }
 }

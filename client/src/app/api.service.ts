@@ -9,8 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public login(email, password) {
-    console.log('in api call');
-    return this.http.post('/login', {email, password});
+  public login(formData) {
+    return this.http.post('/login', formData);
   }
 }

@@ -3,6 +3,6 @@ export class Rule {
     public code: string,
     public descriptionArr: object[],
     public score: number,
-    public active: boolean
+    public isActive: boolean
   ) { }
 }

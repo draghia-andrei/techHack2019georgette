@@ -1,3 +1,40 @@
-<p>
-  evaluations works!
-</p>
+<h1>{{title}}</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CNP</th>
+      <th scope="col">Rules</th>
+      <th scope="col">Score</th>
+      <th scope="col">Evaluated on</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of evaluatedPersons; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ person.id }}</td>
+      <td>
+        <ng-container *ngFor="let rule of person.rules">
+          <ng-container *ngIf="rule.evaluatedSuccessfully">
+            <span class="badge badge-success">{{rule.label}}</span>
+          </ng-container>
+          <ng-container *ngIf="!rule.evaluatedSuccessfully">
+            <span class="badge badge-danger">{{rule.label}}</span>
+          </ng-container>
+        </ng-container>
+      </td>
+      <td>
+        <ng-container *ngIf="person.score >= 0 && person.score <34">
+          <span class="badge badge-danger">{{person.score}}/100</span>
+        </ng-container>
+        <ng-container *ngIf="person.score >= 34 && person.score <67">
+          <span class="badge badge-warning">{{person.score}}/100</span>
+        </ng-container>
+        <ng-container *ngIf="person.score >= 67 && person.score <=100">
+          <span class="badge badge-success">{{person.score}}/100</span>
+        </ng-container>
+      </td>
+      <td>{{ person.evaluatedTime }}</td>
+    </tr>
+  </tbody>
+</table>
