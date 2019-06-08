@@ -28,7 +28,9 @@ const employees = [
 export class EmployeeService {
   employees: Employee[] = employees;
 
-  constructor() { }
+  set(employees: Employee[]): void {
+    this.employees = employees;
+  }
 
   getAll() {
     return this.employees;

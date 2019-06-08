@@ -1,4 +1,28 @@
-<div class="md-form form-sm">
-  <input mdbInput type="text" id="form1" class="form-control form-control-sm">
-  <label for="form1" class="">Example label</label>
+<div class="container">
+  <h1>{{title}}</h1>
+  <form>
+    <div class="form-group">
+      <label for="id">id</label>
+      <input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
+    </div>
+    <button type="submit" class="btn btn-success">Search</button>
+  </form>
+</div>
+
+<p>id: {{id}}</p>
+
+<div class="row">
+  <div class="col-md">
+    <p>TARGEEET BABYY</p>
+    <img src="https://cdn-images-1.medium.com/max/1000/1*cXVC1n-marI-0vosvporcQ.png" class="img img-responsive" />
+  </div>
+  <div class="col-md">{{score}}/100
+  </div>
+  <div class="col-md">
+    <p>Advices - GFY</p>
+    <p>um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu f</p>
+  </div>
 </div>
