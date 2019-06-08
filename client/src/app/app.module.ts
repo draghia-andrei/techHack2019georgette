@@ -1,10 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth.guard';
+import { ApiService } from './api.service';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
+
+import { InputComponent } from '../components/input/input.component';
+import { ButtonComponent } from '../components/button/button.component';
 
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -19,10 +27,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    InputComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FlexLayoutModule,
+    AppRoutingModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -30,7 +43,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AngularFireModule.initializeApp(environment.firebase),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [MessagingService, AsyncPipe],
+  providers: [AuthGuard, ApiService, MessagingService, AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
