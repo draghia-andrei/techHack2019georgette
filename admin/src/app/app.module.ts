@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './screens/login/login.component';
 import { EmployeeComponent } from './screens/employee/employee.component';
@@ -11,6 +13,7 @@ import { AdministratorComponent } from './screens/administrator/administrator.co
 import { EvaluationsComponent } from './screens/evaluations/evaluations.component';
 import { RulesComponent } from './screens/rules/rules.component';
 import { EmployeesComponent } from './screens/employees/employees.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { EmployeesComponent } from './screens/employees/employees.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
