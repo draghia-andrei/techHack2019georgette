@@ -13,8 +13,8 @@ export class AuthService {
     return this.isLoggedIn;
   }
 
-  login(email, password) {
-    this.apiService.login(email, password)
+  login(formData) {
+    this.apiService.login(formData)
       .subscribe((result) => {
           console.log('result %o', result);
           this.isLoggedIn = true;

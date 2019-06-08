@@ -1,7 +1,7 @@
 <div class="login-component">
-  <!--<form class="login-form">-->
-    <app-input id="email" placeholder="Email" type="text"></app-input>
-    <app-input id="password" placeholder="Password" type="password"></app-input>
-    <app-button (clicked)="submitLogin()" label="Login"></app-button>
-  <!--</form>-->
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate class="login-form">
+    <input name="email" type="text" placeholder="Email" ngModel #email="ngModel">
+    <input name="password" type="password" placeholder="Password" ngModel #password="ngModel">
+    <button>Submit</button>
+  </form>
 </div>
