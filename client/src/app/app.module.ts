@@ -20,8 +20,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { MessagingService } from './shared/messaging.service';
 import { environment } from '../environments/environment';
-import {AsyncPipe} from '@angular/common';
+import { AsyncPipe} from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { TranzactionRatingComponent } from './tranzaction-rating/tranzaction-rating.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     DashboardComponent,
     LoginComponent,
     InputComponent,
-    ButtonComponent
+    ButtonComponent,
+    TranzactionRatingComponent
   ],
   imports: [
     BrowserModule,
