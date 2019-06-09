@@ -24,6 +24,8 @@ import { environment } from '../environments/environment';
 import { AsyncPipe} from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranzactionRatingComponent } from './tranzaction-rating/tranzaction-rating.component';
+import { TransactionItemComponent } from './transaction-item/transaction-item.component';
+import { TransactionListComponent } from './transaction-list/transaction-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TranzactionRatingComponent } from './tranzaction-rating/tranzaction-rat
     LoginComponent,
     InputComponent,
     ButtonComponent,
-    TranzactionRatingComponent
+    TranzactionRatingComponent,
+    TransactionItemComponent,
+    TransactionListComponent
   ],
   imports: [
     BrowserModule,
