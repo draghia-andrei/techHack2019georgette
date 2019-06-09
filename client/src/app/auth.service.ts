@@ -7,7 +7,7 @@ import { ApiService } from './api.service';
 export class AuthService {
   constructor(private apiService: ApiService) {}
 
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   checkAuth() {
     return this.isLoggedIn;

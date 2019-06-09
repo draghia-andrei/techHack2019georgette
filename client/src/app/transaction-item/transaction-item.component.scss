@@ -1,0 +1,28 @@
+.transaction-item {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  border: 1px solid #ccc;
+}
+
+.left-section, .middle-section, .right-section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.left-section {
+  text-align: center;
+  width: 100px;
+  background: #2C3E50;
+  color: #eee;
+}
+
+.middle-section {
+  flex-grow: 1;
+}
+
+.right-section {
+  text-align: center;
+  width: 80px;
+}

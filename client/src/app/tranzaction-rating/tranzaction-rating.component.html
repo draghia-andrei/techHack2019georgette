@@ -1,0 +1,39 @@
+<div class="rating__container">
+  <img src="../assets/success.png" alt="" class="rating__img">
+  <p class="text-center rating__text1">You have made a payment of 135.50 lei towards S.C BetExpert</p>
+  <p class="text-center rating__text2">Is it important?</p>
+  <div class="rating__wrapper d-flex">
+    <span>no</span>
+    <form #ratingForm="ngForm" novalidate>
+
+      <div class="d-flex">
+        <input class="rating__input d-none" type="radio" name="rating" value="1" ngModel
+               (change)="ratingSubmit(ratingForm)" id="rating1">
+        <label class="rating__button" for="rating1">1</label>
+
+        <input class="rating__input d-none" type="radio" name="rating" value="2" ngModel
+               (change)="ratingSubmit(ratingForm)" id="rating2">
+        <label class="rating__button" for="rating2">2</label>
+
+        <input class="rating__input d-none" type="radio" name="rating" value="3" ngModel
+               (change)="ratingSubmit(ratingForm)" id="rating3">
+        <label class="rating__button" for="rating3">3</label>
+
+        <input class="rating__input d-none" type="radio" name="rating" value="5" ngModel
+               (change)="ratingSubmit(ratingForm)" id="rating5">
+        <label class="rating__button" for="rating5">5</label>
+
+        <input class="rating__input d-none" type="radio" name="rating" value="8" ngModel
+               (change)="ratingSubmit(ratingForm)" id="rating8">
+        <label class="rating__button" for="rating8">8</label>
+
+        <input class="rating__input d-none" type="radio" name="rating" value="13" ngModel
+               (change)="ratingSubmit(ratingForm)" id="rating13">
+        <label class="rating__button" for="rating13">13</label>
+
+      </div>
+    </form>
+
+    <span>Yes</span>
+  </div>
+</div>

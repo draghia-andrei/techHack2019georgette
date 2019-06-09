@@ -1,0 +1,17 @@
+<div class="transaction-item">
+  <div class="left-section">
+    <span class="transaction-category {{transactionCategoryIcon}}">{{transactionItem.category.name}}</span>
+    <span class="transaction-date">{{transactionItem.valueDate}}</span>
+  </div>
+
+  <div class="middle-section">
+    <span class="transaction-title">{{transactionItem.isReceived && transactionItem.isReceived === 'true' ? transactionItem.debtorName : transactionItem.creditorName}}</span>
+    <span class="transaction-code">{{transactionItem.isReceived && transactionItem.isReceived === 'true' ? transactionItem.debtorAccount.maskedPan : transactionItem.creditorAccount.maskedPan}}</span>
+  </div>
+
+  <div class="right-section">
+    <span class="transaction-value">{{transactionItem.transactionAmount.amount}} {{transactionItem.transactionAmount.currency}}</span>
+
+    <span class="transaction-rating">{{transactionItem.rating}}</span>
+  </div>
+</div>
