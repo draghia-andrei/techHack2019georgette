@@ -26,6 +26,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranzactionRatingComponent } from './tranzaction-rating/tranzaction-rating.component';
 import { TransactionItemComponent } from './transaction-item/transaction-item.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TransactionListComponent } from './transaction-list/transaction-list.co
     ButtonComponent,
     TranzactionRatingComponent,
     TransactionItemComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,

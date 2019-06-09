@@ -1,41 +1,44 @@
-<h1 class="mat-h1">{{title}}</h1>
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-  <ng-container matColumnDef="index">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
-    <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
-  </ng-container>
+<app-navbar></app-navbar>
+<div class='container'>
+  <h1 class="mat-h1">{{title}}</h1>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="index">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+      <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Identifier </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Identifier </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="rules">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rules </th>
-    <td mat-cell *matCellDef="let element">
-      <ng-container *ngFor="let rule of element.rules">
-        <mat-chip selected [color]="(rule.evaluatedSuccessfully) ? 'primary' : 'warn' ">
-          {{rule.label}}
+    <ng-container matColumnDef="rules">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rules </th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngFor="let rule of element.rules">
+          <mat-chip selected [color]="(rule.evaluatedSuccessfully) ? 'primary' : 'warn' ">
+            {{rule.label}}
+          </mat-chip>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-chip selected
+          [color]="(element.score >= 0 && element.score <34) ? 'warn' : (element.score >= 34 && element.score <67) ? 'accent' : 'primary' ">
+          {{element.score}} / 100
         </mat-chip>
-      </ng-container>
-    </td>
-  </ng-container>
+      </td>
+    </ng-container>
 
-  <ng-container matColumnDef="score">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
-    <td mat-cell *matCellDef="let element">
-      <mat-chip selected
-        [color]="(element.score >= 0 && element.score <34) ? 'warn' : (element.score >= 34 && element.score <67) ? 'accent' : 'primary' ">
-        {{element.score}} / 100
-      </mat-chip>
-    </td>
-  </ng-container>
+    <ng-container matColumnDef="evaluatedTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Evaluated On </th>
+      <td mat-cell *matCellDef="let element"> {{element.evaluatedTime}} </td>
+    </ng-container>
 
-  <ng-container matColumnDef="evaluatedTime">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Evaluated On </th>
-    <td mat-cell *matCellDef="let element"> {{element.evaluatedTime}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

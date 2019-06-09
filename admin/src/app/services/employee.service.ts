@@ -4,19 +4,27 @@ import { Employee } from '../models/employee';
 const employees = [
   {
     id: 1,
-    firstName: 'a',
-    lastName: 'b',
-    username: 'c',
+    firstName: 'John',
+    lastName: 'Doe',
+    username: 'joDoe01',
     isActive: true,
     isAdmin: false
   },
   {
     id: 2,
-    firstName: 'b',
-    lastName: 'b',
-    username: 'c',
+    firstName: 'George',
+    lastName: 'B.',
+    username: 'georgB',
     isActive: true,
-    isAdmin: false
+    isAdmin: true
+  },
+  {
+    id: 3,
+    firstName: 'Cardi',
+    lastName: 'B.',
+    username: 'cbardi',
+    isActive: false,
+    isAdmin: true
   }
 ]
 

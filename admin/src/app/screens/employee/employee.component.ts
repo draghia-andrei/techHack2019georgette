@@ -9,10 +9,14 @@ export class EmployeeComponent implements OnInit {
   title = "Employee";
   id: string;
   score: number = 55;
+  isShown = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit = event => {
+    this.isShown = true;
+  }
 }
