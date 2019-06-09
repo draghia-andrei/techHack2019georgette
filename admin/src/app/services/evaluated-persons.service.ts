@@ -28,7 +28,7 @@ const evalP: Person[] = [
       new RuleEvaluation('age', false),
       new RuleEvaluation('ok', true),
       new RuleEvaluation('aloha', true),
-      new RuleEvaluation('la vida loca', true),
+      new RuleEvaluation('la vida loca', false),
     ],
     score: 79,
     evaluatedTime: '01 Dec, 8:50 PM'

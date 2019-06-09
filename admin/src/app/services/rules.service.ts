@@ -4,25 +4,25 @@ import { Rule } from '../models/rule';
 const rules: Rule[] = [
   {
     code: 'age-18-21',
-    descriptionArr: [],
+    descriptionArr: 'age between 18 and 21',
     score: 25,
     isActive: true,
   },
   {
     code: 'spendsOnBets',
-    descriptionArr: [],
+    descriptionArr: 'spends bets >= 300 RON',
     score: 40,
     isActive: true,
   },
   {
     code: 'male',
-    descriptionArr: [],
+    descriptionArr: 'sex is male',
     score: 10,
     isActive: false,
   },
   {
     code: 'movies',
-    descriptionArr: [],
+    descriptionArr: 'mooovies',
     score: 20,
     isActive: false
   }
