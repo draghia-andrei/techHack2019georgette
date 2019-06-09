@@ -1,27 +1,57 @@
-<h1>{{title}}</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Rule code</th>
-      <th scope="col">Rule description</th>
-      <th scope="col">Rule scor</th>
-      <th scope="col">Active</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let rule of rules; index as i">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ rule.code }}</td>
-      <td>{{ rule.description }}</td>
-      <td>{{ rule.score }}</td>
-      <td>{{ rule.isActive }}</td>
-      <td><button class="btn btn-success">Edit</button><button class="btn btn-danger">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+<h1 class="mat-h1">{{title}}</h1>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="index">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+    <td mat-cell *matCellDef="let element; let i = index"> {{i+1}} </td>
+  </ng-container>
 
+  <!-- Position Column -->
+  <ng-container matColumnDef="code">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rule code </th>
+    <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rule description </th>
+    <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="score">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Rule score </th>
+    <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="isActive">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Active </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-checkbox [(ngModel)]="element.isActive" disabled></mat-checkbox>
+    </td>
+  </ng-container>
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+    <td mat-cell *matCellDef="let element; let i = index">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon> &#8595;</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
 
 <div class="container">
   <form>

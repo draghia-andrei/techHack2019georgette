@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+
+mat-chip {
+  max-width: 200px;
+}
+
+
+.mat-chip {
+  margin-left: 2px;
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: green;
+}
