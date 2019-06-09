@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-transaction-list',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionListComponent implements OnInit {
 
-  public items = [1,2,3,4,5,6,7,8];
+  public items: any;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.getTransactions()
+      .subscribe((result) => {
+        this.items = result;
+      },
+error => {
+        console.log('error: %o', error);
+      });
   }
-
 }
