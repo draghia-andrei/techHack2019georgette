@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { AuthGuard } from './auth.guard';
 import {TranzactionRatingComponent} from './tranzaction-rating/tranzaction-rating.component';
+import {BalanceComponent} from './balance/balance.component';
 
 const routes: Routes = [
   {
@@ -14,9 +15,14 @@ const routes: Routes = [
     data: { title: 'Login' }
   },
   {
-    path: 'transaction-rating/:transactionId',
+    path: 'transaction-rating',
     component: TranzactionRatingComponent,
     data: { title: 'Transaction Rating' }
+  },
+  {
+    path: 'balance',
+    component: BalanceComponent,
+    data: { title: 'Balance' }
   },
   {
     path: '',
