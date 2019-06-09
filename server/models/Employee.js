@@ -7,12 +7,15 @@ const employeeSchema = new mongoose.Schema({
     password: String,
     passwordResetToken: String,
     passwordResetExpires: Date,
+    
 
     tokens: Array,
 
     profile: {
-        name: String,
-        
+        firstName: String,
+        lastName: String,
+        isActive: Boolean,
+        isAdmin: Boolean
     }
 }, { timestamps: true });
 
@@ -20,20 +23,20 @@ const employeeSchema = new mongoose.Schema({
  * Password hash middleware.
  */
 employeeSchema.pre('save', function save(next) {
-    const user = this;
-    if (!user.isModified('password')) { return next(); }
+    const employee = this;
+    if (!employee.isModified('password')) { return next(); }
     bcrypt.genSalt(10, (err, salt) => {
         if (err) { return next(err); }
-        bcrypt.hash(user.password, salt, (err, hash) => {
+        bcrypt.hash(employee.password, salt, (err, hash) => {
             if (err) { return next(err); }
-            user.password = hash;
+            employee.password = hash;
             next();
         });
     });
 });
 
 /**
- * Helper method for validating user's password.
+ * Helper method for validating employee's password.
  */
 employeeSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
@@ -42,7 +45,7 @@ employeeSchema.methods.comparePassword = function comparePassword(candidatePassw
 };
 
 /**
- * Helper method for getting user's gravatar.
+ * Helper method for getting employee's gravatar.
  */
 employeeSchema.methods.gravatar = function gravatar(size) {
     if (!size) {
@@ -55,6 +58,6 @@ employeeSchema.methods.gravatar = function gravatar(size) {
     return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 };
 
-const User = mongoose.model('User', userSchema);
+const Employee = mongoose.model('Employee', employeeSchema);
 
-module.exports = User;
+module.exports = Employee;
