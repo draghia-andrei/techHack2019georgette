@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { AsyncPipe} from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TranzactionRatingComponent } from './tranzaction-rating/tranzaction-rating.component';
+import { BalanceComponent } from './balance/balance.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TranzactionRatingComponent } from './tranzaction-rating/tranzaction-rat
     LoginComponent,
     InputComponent,
     ButtonComponent,
-    TranzactionRatingComponent
+    TranzactionRatingComponent,
+    BalanceComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import {TranzactionRatingComponent} from './tranzaction-rating/tranzaction-rating.component';
+import {BalanceComponent} from './balance/balance.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
     path: 'transaction-rating',
     component: TranzactionRatingComponent,
     data: { title: 'Transaction Rating' }
+  },
+  {
+    path: 'balance',
+    component: BalanceComponent,
+    data: { title: 'Balance' }
   },
   {
     path: '',
