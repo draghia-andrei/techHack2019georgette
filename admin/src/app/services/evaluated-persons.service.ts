@@ -14,25 +14,32 @@ const evalP: Person[] = [
     evaluatedTime: '15 sep, 8:56 PM'
   },
   {
-    id: '1930924050023',
+    id: '2930984750053',
     rules: [
       new RuleEvaluation('age', false),
       new RuleEvaluation('ok', true)
     ],
     score: 22,
-    evaluatedTime: '15 sep, 8:56 PM'
+    evaluatedTime: '12 sep, 3:52 PM'
   },
   {
-    id: '1930924050048',
+    id: '1930424350048',
     rules: [
       new RuleEvaluation('age', false),
       new RuleEvaluation('ok', true),
       new RuleEvaluation('aloha', true),
-      new RuleEvaluation('vidal', true),
-      new RuleEvaluation('fara cal', false),
+      new RuleEvaluation('la vida loca', false),
     ],
     score: 79,
-    evaluatedTime: '15 sep, 8:56 PM'
+    evaluatedTime: '01 Dec, 8:50 PM'
+  },
+  {
+    id: '1830224250048',
+    rules: [
+      new RuleEvaluation('age-25-40', false),
+    ],
+    score: 100,
+    evaluatedTime: '31 Dec, 8:50 PM'
   }
 ];
 @Injectable({
