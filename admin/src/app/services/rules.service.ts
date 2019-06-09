@@ -20,6 +20,12 @@ const rules: Rule[] = [
     score: 10,
     isActive: false,
   },
+  {
+    code: 'movies',
+    descriptionArr: [],
+    score: 20,
+    isActive: false
+  }
 ];
 
 @Injectable({
