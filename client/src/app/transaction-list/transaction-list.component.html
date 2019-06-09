@@ -1,7 +1,12 @@
+<!--<button class="btn btn-primary" (>Balance</button>-->
+<nav class="nav">
+  <a class="nav-link " (click)="navigateToBalance()">Balance</a>
+  <a class="nav-link disabled" href="#">Profile</a>
+</nav>
 <div class="transaction-list">
   <!--<ul>-->
     <!--<li >-->
-      <app-transaction-item *ngFor="let item of items; index as i" [routerLink]="['/transaction-rating/' + item.transactionId]"></app-transaction-item>
+      <app-transaction-item *ngFor="let item of items; index as i" [routerLink]="['/transaction-rating/' + item.transactionId]" (click)="navigateToRating()"></app-transaction-item>
     <!--</li>-->
   <!--</ul>-->
 </div>
