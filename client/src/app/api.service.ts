@@ -12,6 +12,11 @@ export class ApiService {
   public login(formData) {
     return this.http.post('/login', formData);
   }
+
+  public getTransactions() {
+    return this.http.get('/transactions');
+  }
+
   public rateTransaction(formData) {
     return this.http.post('/rateTransaction', formData);
   }

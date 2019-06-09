@@ -14,7 +14,7 @@ const routes: Routes = [
     data: { title: 'Login' }
   },
   {
-    path: 'transaction-rating',
+    path: 'transaction-rating/:transactionId',
     component: TranzactionRatingComponent,
     data: { title: 'Transaction Rating' }
   },
